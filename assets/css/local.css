@@ -1,0 +1,18 @@
+
+#contentContainer {
+	padding: 40px 50px 75px 50px;
+	font-family: "Roboto", san-serif;
+	text-align: center;
+}
+
+#contentContainer h1 {
+	color: #cc0000;
+}
+
+#contentContainer h2 {
+	color: #cc0000;
+}
+
+html, body {
+	height: 100%;
+}

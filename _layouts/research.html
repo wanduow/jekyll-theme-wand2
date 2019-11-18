@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div id="researchInput">
+	{{ content }}
+</div>
+
+<div id="research">
+	<ul>
+		{% for topic in site.research %}
+		<li>
+			<span>{{ topic.content }}</span>
+			<a href="{{ topic.url }}" class="boxLink">{{ topic.name }}</a>
+		</li>
+		{% endfor %}
+	<ul>
+</div>

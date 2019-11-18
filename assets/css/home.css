@@ -1,0 +1,84 @@
+
+#welcome-panel a {
+	color: #BB261A;
+	margin-top: 20px;
+}
+
+#welcome-panel .boxLink {
+	color: white;
+}
+
+#contentContainer {
+	padding: 1% 5% 5% 5%;
+	font-family: "Roboto", san-serif;
+	text-align: center;
+} 
+
+#welcome-board {                                    
+	margin: auto;                               
+	display: inline-block;                      
+	text-align: initial;                        
+	margin-bottom: 60px;
+	max-width: 70%;
+}
+													
+#welcome-panel {
+	max-width: 50%;
+	margin-right: 5%;
+	display: inline;
+	background-color: #fafafa;
+}
+
+#welcome-panel p {
+	padding-right: 5%;
+}
+
+#welcome-panel .boxLink {
+	color: white;
+}
+													
+#welcome-board img {                                    
+	width: 950px;                               
+	height: 450px;                              
+	display: inline-block;                      
+	background-color: #A0A0A0;
+	margin-top: 20px;
+}
+
+#twitter-board{
+	display: inline-block;
+	float: left;
+	text-align: left;
+	width: 60%;
+	height: 40%;
+}
+
+#links-board {
+	display: inline-block;
+	float: left;
+	margin-left: 10%;
+	text-align: left;
+	max-width: 30%;
+}
+
+#links-board ul {
+	padding-left: 0px;
+}
+
+#links-board li {
+	display: block;
+}
+
+#links-board li a {
+	display: block;
+	height: 30px;
+	width: 200px;
+	text-align: center;
+	padding-top: 15px;
+	margin-bottom: 50px;
+}
+
+#twitter-wlinks {
+	display: inline-block;
+	max-width: 70%;
+}

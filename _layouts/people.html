@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div id="peopleInput">
+	{{ content }}
+</div>
+
+<div id="people">
+	{% for item in site.data.pCatagory %}
+	<div id="{{ item.name }}" class="pCatagory">
+		<h1>{{ item.name | capitalize}}</h1>
+		
+		<ul id="{{item.name}}Link">
+			{% for person in site.people %}
+			{% if person.role == item.name%}
+			<li class="person">
+				<img src="assets/images/{{ person.name | downcase | replace: ' ', '_' }}" class="peopleImg" alt=" ">
+				<h4>{{ person.name }}</h4>
+				<span>{{ person.content | truncate: 20 }}</span>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</div> <br >
+	{% endfor %}
+</div>

@@ -1,0 +1,9 @@
+#contact {
+	display: inline-block;
+	text-align: left;
+	min-width: 80%;
+}
+
+#contact h4 {
+	color: #BB261A;
+}

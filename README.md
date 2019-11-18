@@ -1,4 +1,4 @@
-# theme-jorsin
+# jekyll-theme-wand2
 
 A theme made for the wand website.
 

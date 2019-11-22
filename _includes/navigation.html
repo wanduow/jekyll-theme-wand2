@@ -1,20 +1,23 @@
 <nav>
 	<button onclick="toggleMenu();" id="menu-button">Menu &#8801;</button>
-	<img src="assets/images/logo.svg" alt="Wand logo" >
+	<img src="assets/images/thin-logo-small.svg" alt="Wand logo" >
+	{% assign linkCompare = page.url | remove: '/' %}
+	{% if page.url == '/' %}{% assign linkCompare = '.' %}{% endif %}
 	{% for item in site.data.navigation %}
     	{% if item.name contains '&#11167;' %} 
 			<div class="dropdown">
-			<a href="{{ item.link }}" class="navlink droplink{% if page.url == item.link %} current{% endif %}">
+			<a href="{{ item.link }}" class="navlink droplink{% if linkCompare == item.link %} current{% endif %}">
 				<h3>{{ item.name }}</h3>
 			</a>
 			<div class="dropdown-content">
 				{% for topic in site.research %}
-					<a href="{{ topic.url }}">{{ topic.name }}</a>
+					{% assign topicHref = topic.url | remove_first: "/" %}
+					<a href="{{ topicHref }}">{{ topic.name }}</a>
 				{% endfor %} 
 			</div>
 			</div>
 		{% else %}
-			<a href="{{ item.link }}" class="navlink {% if page.url == item.link %}current{% endif %}">
+			<a href="{{ item.link }}" class="navlink {% if linkCompare  == item.link %}current{% endif %}">
 				<h3>{{ item.name }}</h3>
 			</a>
 		{% endif %}

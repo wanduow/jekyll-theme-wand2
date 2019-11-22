@@ -1,4 +1,4 @@
-# jekyll-theme-wand2
+# jekyll-theme-wand2 
 
 A theme made for the wand website.
 

@@ -8,10 +8,12 @@ layout: default
 <div id="research">
 	<ul>
 		{% for topic in site.research %}
-		<li>
-			<span>{{ topic.content }}</span>
-			<a href="{{ topic.url }}" class="boxLink">{{ topic.name }}</a>
+		{% assign indexOdd = forloop.index0 | modulo: 2 %}
+		<li {% if indexOdd == 1 %} class="oddResearch"{% endif %}>
+			{{ topic.content }}
+			{% assign topicHref = topic.url | remove_first: "/" %}
+			<a href="{{ topicHref }}" class="boxLink">{{ topic.name }}</a>
 		</li>
 		{% endfor %}
-	<ul>
+	</ul>
 </div>

@@ -9,12 +9,23 @@
 	margin-top: 1%;
 }
 
-#people ul li {
+#people ul a {
 	display: inline-block;
+	text-decoration: none;
+	color: black;
 	height: 300px;
 	width: 200px;
 	margin-right: 70px;
+	outline: none;
+}
+
+#people ul a:active {
+	outline: none;
+}
+
+#people ul li {
 	text-align: left;
+	display: block;
 }
 
 #people ul li h4 {
@@ -22,8 +33,12 @@
 	padding: 0px;
 }
 
-#people ul li span p {
+#people ul li p {
 	margin: 0px;
+}
+
+#people .oddpCatagory {
+	background-color: $backGrey; 
 }
 
 .peopleImg {
@@ -35,7 +50,19 @@
 
 .pCatagory {
 	display: inline-block;
-	margin-left: 10%;
 	text-align: left;
+	width: 140%;
+	margin-left: -6.5%;
+	padding-left: 26.5%;
+}
+
+.pCatagory ul {
 	width: 70%;
+}
+
+#person {
+	display: inline-block;
+	margin: auto;
+	text-align: initial;
+	width: 80%;
 }

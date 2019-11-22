@@ -1,6 +1,6 @@
 
 #welcome-panel a {
-	color: #BB261A;
+	color: $headerRed;
 	margin-top: 20px;
 }
 
@@ -9,8 +9,8 @@
 }
 
 #contentContainer {
-	padding: 1% 5% 5% 5%;
-	font-family: "Roboto", san-serif;
+	padding: 1% 5% 0% 5%;
+	font-family: $siteFont;
 	text-align: center;
 } 
 
@@ -26,7 +26,6 @@
 	max-width: 50%;
 	margin-right: 5%;
 	display: inline;
-	background-color: #fafafa;
 }
 
 #welcome-panel p {
@@ -38,7 +37,7 @@
 }
 													
 #welcome-board img {                                    
-	width: 950px;                               
+	width: 90%;                               
 	height: 450px;                              
 	display: inline-block;                      
 	background-color: #A0A0A0;
@@ -49,7 +48,7 @@
 	display: inline-block;
 	float: left;
 	text-align: left;
-	width: 60%;
+	width: 30%;
 	height: 40%;
 }
 
@@ -75,10 +74,13 @@
 	width: 200px;
 	text-align: center;
 	padding-top: 15px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 
 #twitter-wlinks {
 	display: inline-block;
-	max-width: 70%;
+	background-color: $backGrey;
+	width: 120%;
+	padding-left: 30%;
+	margin-left: -15%;
 }

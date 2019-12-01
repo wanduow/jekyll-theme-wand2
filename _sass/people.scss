@@ -1,44 +1,61 @@
-#peopleInput {
-	width: 70%;
-	display: inline-block;
-	text-align: left;
-	margin-left: 10%;
-}
+#people {
+	@extend %main-div;
 
-#people .pCatagory h1 {
-	margin-top: 1%;
-}
+	&Input {
+		@extend %main-div;
+		display: inline-block;
+		text-align: left;
+	}
 
-#people ul a {
-	display: inline-block;
-	text-decoration: none;
-	color: black;
-	height: 300px;
-	width: 200px;
-	margin-right: 70px;
-	outline: none;
-}
+	ul a {
+		display: inline-block;
+		text-decoration: none;
+		color: black;
+		height: 300px;
+		width: 200px;
+		margin-right: 70px;
+		outline: none;
 
-#people ul a:active {
-	outline: none;
-}
+		&:active {
+			outline: none;
+		}
+	}
 
-#people ul li {
-	text-align: left;
-	display: block;
-}
+	ul li {
+		text-align: left;
+		display: inline-block;
+		vertical-align: top;
 
-#people ul li h4 {
-	margin: 0px;
-	padding: 0px;
-}
+		h4 {
+			margin: 0px;
+			padding: 0px;
+			padding-top: 15px;
+		}
 
-#people ul li p {
-	margin: 0px;
-}
+		p {
+			margin: 0px;
+		}
+	}
 
-#people .oddpCatagory {
-	background-color: $backGrey; 
+	.oddpCatagory {
+		background-color: $backGrey; 
+	}
+
+	.pCatagory {
+		display: inline-block;
+		text-align: left;
+		width: 110%;
+		margin-left: -22%;
+		padding-left: 42%;
+
+		ul {
+			width: 70%;
+		}
+
+		h1 {
+			margin-top: 1%;
+		}
+	}
 }
 
 .peopleImg {
@@ -48,21 +65,47 @@
 	display: block;
 }
 
-.pCatagory {
-	display: inline-block;
-	text-align: left;
-	width: 140%;
-	margin-left: -6.5%;
-	padding-left: 26.5%;
-}
-
-.pCatagory ul {
-	width: 70%;
+.oddSect {
+	background-color: $backGrey; 
 }
 
 #person {
+	width: 50%;
+	margin-left: -30%;
+	min-width: 300px;
 	display: inline-block;
-	margin: auto;
 	text-align: initial;
-	width: 80%;
+
+	li {
+		display: block;
+		margin-bottom: 2em;
+
+		span {
+			color: grey;
+		}
+
+		h6, span {
+			margin: 0;
+		}
+	}
+
+	h5 {
+		margin-top: 0;
+	}
+
+	h2 {
+		margin-bottom: 0.2em;
+	}
+	
+	h4 {
+		color: $headerRed;
+	}
+
+	.peopleImg {
+		float: right;
+		height: 300px;
+		width: 300px;
+		margin-right: -60%;
+		margin-left: 5%;
+	}
 }

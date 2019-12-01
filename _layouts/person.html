@@ -1,14 +1,61 @@
-<!doctype html>
-<html>
-	{% include headwLocal2.html %}
-	<body>
-		{% include navigation2.html %}
-		<div id="contentContainer">
-			<div id="person">
-				<h2>{{ page.name }}</h2>
-				<img src="../assets/images/{{ page.name | downcase | replace: ' ', '_' }}" class="peopleImg" alt=" ">
-				{{ content }}
-			</div>
-		</div>
-	</body>
-</html>
+---
+layout: default
+---
+
+<div id="person">
+	<h2>{{ page.name }}</h2>
+	<h5>{{ page.role }}</h5>
+	<img src="
+	{% for imgRef in site.static_files %}
+		{% if imgRef.path contains 'assets/images/' %}
+			{% assign imgRefArray = imgRef.path | split: 'ssets/images/' %}
+			{% assign personRef = page.name | downcase | replace: ' ', '_' %}
+			{% if imgRefArray[1] contains personRef %}
+			{{ imgRefArray[1] | prepend: 'assets/images/' | absolute_url}}
+			{% break %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	" class="peopleImg" alt=" ">
+	{{ content }}
+</div>
+
+{% if page.projects != null %}
+{% assign projectsArray = page.projects | split: ',' %}
+<div id="topic">
+	<h3>Projects</h3>
+	<table>
+		<tr id="tableHead">
+			<td>Name</td>
+			<td>Topic</td>
+			<td>Description</td>
+			<td>Link</td>
+		</tr>
+		<tr id="thSpacer"><td></td><td></td><td></td><td></td></tr>
+		{% for project in projectsArray %}
+		{% assign projectCompare = project | strip %}
+		{% for externalProject in site.data.externalProject %}
+			{% if projectCompare == externalProject.name %}
+			<tr>
+				<td>{{ externalProject.name }}</td>
+				<td>{{ externalProject.topic }}</td>
+				<td>{{ externalProject.description }}</td>
+				<td class="linkCell"><a href="{{ externalProject.link }}" class="boxLink">Link</a></td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+
+		{% for internalProject in site.projects %}
+			{% if projectCompare == internalProject.name %}
+			<tr>
+				<td>{{ internalProject.name }}</td>
+				<td>{{ internalProject.topic }}</td>
+				<td>{{ internalProject.description }}</td>
+				<td class="linkCell"><a href="{{ internalProject.url | absolute_url }}" class="boxLink">Link</a></td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+		{% endfor %}
+	</table>
+</div>
+{% endif %}

@@ -1,0 +1,44 @@
+#plain {
+	@extend %main-div;
+	display: inline-block;
+	text-align: left;
+
+	& h4 {
+		color: $headerRed;
+	}
+
+	& strong {
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+}
+
+#maps {
+	@extend %main-div;
+	display: inline-block;
+
+	&-content {
+		text-align: left;
+		width: 40%;
+		display: inline-block;
+		min-width: 200px;
+		padding-right: 1%;
+		float: left;
+	}
+
+	&-panel {
+		display: inline-block;
+		width: 50%;
+		min-width: 200px;
+		height: 500px;
+		padding-top: 10em;
+	}
+
+	p a {
+		text-decoration: none;
+	}
+	
+	h4 {
+		color: $headerRed;
+	}
+}

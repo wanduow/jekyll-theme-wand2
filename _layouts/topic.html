@@ -1,43 +1,37 @@
-<!doctype html>
-<html>
-	{% include headwLocal2.html %}
-	<body>
-		{% include navigation2.html %}
-		<div id="contentContainer">
-			<div id="topic">
-				<h2>{{ page.name }}</h2>
-				{{ content }}
+---
+layout: default
+---
 
-				<h3>Projects</h3>
-				<table>
-					<tr id="tableHead">
-						<td>Name</td>
-						<td>Description</td>
-						<td>Link</td>
-					</tr>
-					<tr id="thSpacer"></tr>
-					{% for externalProject in site.data.externalProject %}
-						{% if page.name == externalProject.topic %}
-						<tr>
-							<td>{{ externalProject.name }}</td>
-							<td>{{ externalProject.description }}</td>
-							<td class="linkCell"><a href="{{ externalProject.link }}" class="boxLink">Link</a></td>
-						</tr>
-						{% endif %}
-					{% endfor %}
+<div id="topic">
+	<h2>{{ page.name }}</h2>
+	{{ content }}
 
-					{% for internalProject in site.projects %}
-						{% if page.name == internalProject.topic %}
-						<tr>
-							<td>{{ internalProject.name }}</td>
-							<td>{{ internalProject.description }}</td>
-							{% assign projectHref = internalProject.url | remove_first: "/" %}
-							<td class="linkCell"><a href="../{{ projectHref }}" class="boxLink">Link</a></td>
-						</tr>
-						{% endif %}
-					{% endfor %}
-				</table>
-			</div>
-		</div>
-	</body>
-</html>
+	<h3>Projects</h3>
+	<table>
+		<tr id="tableHead">
+			<td>Name</td>
+			<td>Description</td>
+			<td>Link</td>
+		</tr>
+		<tr id="thSpacer"><td></td><td></td><td></td></tr>
+		{% for externalProject in site.data.externalProject %}
+			{% if page.name == externalProject.topic %}
+			<tr>
+				<td>{{ externalProject.name }}</td>
+				<td>{{ externalProject.description }}</td>
+				<td class="linkCell"><a href="{{ externalProject.link }}" class="boxLink">Link</a></td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+
+		{% for internalProject in site.projects %}
+			{% if page.name == internalProject.topic %}
+			<tr>
+				<td>{{ internalProject.name }}</td>
+				<td>{{ internalProject.description }}</td>
+				<td class="linkCell"><a href="{{ internalProject.url | absolute_url }}" class="boxLink">Link</a></td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+	</table>
+</div>

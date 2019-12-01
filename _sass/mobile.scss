@@ -1,0 +1,173 @@
+@media (max-width: 750px) {
+	$navPos: absolute;
+
+	%main-mob {
+		width: 100%;
+	}
+
+	#banner {
+		display: inline-block;
+		z-index: 1;
+		position: $navPos;
+
+		a {
+			outline: none;
+		}
+	}
+
+	nav {
+		/* min-height: 50px; */
+		display: block;
+		position: $navPos;
+		transform: translate(0%, -100%);
+		transition: all 0.45s ease-in;
+
+		#navImg {
+			display: none;
+		}
+
+		a {
+			/* display: none; */
+			margin-top: 0;
+			width: 100%;
+			margin-left: -20%;
+			padding-left: 50px;
+			text-align: left;
+		}
+	}
+
+	#menu-button {
+		float: right;
+		border: none;
+		outline: none;
+		outline-width: 0;
+		background-color: $navBlack;
+		color: white;
+		font-size: 1.6em;
+		font-weight: bold;
+		margin-top: -10px;
+		display: block;
+		height: 60px;
+		width: 20%;
+		margin-right: 19%;
+
+		img {
+			width: 1em;
+			margin-left: 10%;
+		}
+
+		&::-moz-focus-inner {
+			border: 0;
+		}
+	}
+
+	.extended {
+		display: inline-block;
+	}
+
+	.extendnav {
+		margin-bottom: 10px;
+		margin-top: 51px;
+		transform: translate(0%, 0%);
+		transition: all 0.4s cubic-bezier(.1,.51,.97,.99);
+	}
+
+	.dropdown:hover .dropdown-content {display: none;}
+	
+	#c-content {
+		@extend %main-mob;
+
+		#twitter-content {
+			min-width: 0;
+			margin-right: 0;
+			margin-left: 0;
+			max-width: none;
+		}
+	}
+
+	#people {
+		@extend %main-mob;
+
+		.pCatagory {
+			margin-left: -25%;
+			padding-left: 45%;
+		}
+	}
+
+	#contentContainer {
+		padding-top: 4em;
+	}
+
+	#project, #maps {
+		@extend %main-mob;
+	}
+
+	#topic {
+		@extend %main-mob;
+
+		table {
+			#tableHead, #thSpacer {
+				display: none;
+			}
+
+			tr {
+				display: inline-block;
+			}
+
+			td {
+				display: inline-block;
+
+				&:nth-child(1) {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	#research{
+		@extend %main-mob;
+		
+		&Input {
+			width: 100%;
+		}
+
+		li {
+			padding-right: 0;
+
+			.boxLink {
+				margin-right: 40%;
+			}
+		}
+	}
+
+	#maps-content {
+		padding-right: 0px;
+		@extend %main-mob;
+	}
+
+	#maps-panel {
+		display: inline-block;
+		width: 100%;
+		min-width: 200px;
+		height: 100px;
+		padding-top: 1em;
+	}
+
+	#person {
+		@extend %main-mob;
+		margin-left: auto;
+		min-width: 0;
+
+		.peopleImg {
+			float: none;
+			height: 200px;
+			width: 200px;
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
+
+	footer p {
+		font-size: 0.9em;
+	}
+}

@@ -8,20 +8,29 @@ layout: default
 <div id="people">
 	{% for item in site.data.pCatagory %}
 	{% assign indexOdd = forloop.index0 | modulo: 2 %}
-	<div id="{{ item.name }}" class="pCatagory {% if indexOdd == 1 %} oddpCatagory{% endif %}">
+	<div class="pCatagory {% if indexOdd == 1 %} oddpCatagory{% endif %}">
 		<h1>{{ item.name | capitalize}}</h1>
 		
-		<ul id="{{item.name}}Link">
+		<ul>
 			{% for person in site.people %}
 			{% if person.role == item.name%}
-			{% assign personHref = person.url | remove_first: "/" %}
-			<a href="{% if person.link != null %}{{ person.link }}{% else %}{{ personHref }}{% endif %}">
 			<li class="person">
-				<img src="assets/images/{{ person.name | downcase | replace: ' ', '_' }}" class="peopleImg" alt=" ">
+				<a href="{% if person.link != null %}{{ person.link }}{% else %}{{ person.url | absolute_url }}{% endif %}">
+					<img src="
+					{% for imgRef in site.static_files %}
+						{% if imgRef.path contains 'assets/images/' %}
+							{% assign imgRefArray = imgRef.path | split: 'ssets/images/' %}
+							{% assign personRef = person.name | downcase | replace: ' ', '_' %}
+							{% if imgRefArray[1] contains personRef %}
+							{{ imgRefArray[1] | prepend: 'assets/images/' | absolute_url }}
+							{% break %}
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					" class="peopleImg" alt=" ">
 				<h4>{{ person.name }}</h4>
-				{{ person.content | truncate: 20 }}
+				</a>
 			</li>
-			</a>
 			{% endif %}
 			{% endfor %}
 		</ul>

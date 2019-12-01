@@ -1,7 +1,9 @@
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1"> <!--For mobile-->
 	<title>{{ page.title }}</title>
-	<link rel ="stylesheet" href="assets/css/styles.css">
-	<link rel ="stylesheet" href="assets/css/local.css">
-	<script type="text/javascript" src="assets/js/local.js"></script>
+		<link rel ="stylesheet" href="{{ 'assets/css/styles.css' | absolute_url }}">
+		<link rel ="stylesheet" href="{{ 'assets/css/local.css' | absolute_url }}">
+		<script type="text/javascript" src="{{ 'assets/js/local.js' | absolute_url }}"></script>
+		<script type="text/javascript" src="{{ 'assets/js/theme.js' | absolute_url }}"></script>
 </head>

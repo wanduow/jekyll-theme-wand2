@@ -1,15 +1,10 @@
-<!doctype html>
-<html>
-	{% include headwLocal2.html %}
-	<body>
-		{% include navigation2.html %}
-		<div id="contentContainer">
-			<div id="project">
-				<h2>{{ page.name }}</h2>
-				{{ content }}
-				{% assign file = page.topic | downcase %}
-				<a href="../research/{{ file }}" class="boxLink">Back to topics</a>
-			</div>
-		</div>
-	</body>
-</html>
+---
+layout: default
+---
+
+<div id="project">
+	<h2>{{ page.name }}</h2>
+	{{ content }}
+	{% assign file = page.topic | downcase %}
+	<a href="../research/{{ file }}" class="boxLink">Related projects</a>
+</div>

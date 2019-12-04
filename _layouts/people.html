@@ -6,9 +6,9 @@ layout: default
 </div>
 
 <div id="people">
-	{% for item in site.data.pCatagory %}
+	{% for item in site.data.pCategory %}
 	{% assign indexOdd = forloop.index0 | modulo: 2 %}
-	<div class="pCatagory {% if indexOdd == 1 %} oddpCatagory{% endif %}">
+	<div class="pCategory {% if indexOdd == 1 %} oddpCategory{% endif %}">
 		<h1>{{ item.name | capitalize}}</h1>
 		
 		<ul>

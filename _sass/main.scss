@@ -79,22 +79,21 @@ h5 { font-size: 1.1em; }
 h6 { font-size: 1em; }
 p { font-size: 1em; a { color: $headerRed; } }
 
-ul {
-	padding-left: 0px;
-}
-
-.boxLink {
-	display: inline-block;
-	background-color: $btnRed;
-	padding: 8px;
-	min-width: 100px;
-	color: white;
+a {
+	color: $headerRed;
 	text-decoration: none;
-	text-align: center;
+
+	&:visited {
+		color: $headerRed;
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 #contentContainer {
-	min-height: 90vh;
+	min-height: 100vh;
 	padding: 1% 5% 5% 5%;
 	font-family: $siteFont;
 	text-align: center;
@@ -102,21 +101,64 @@ ul {
 	h1, h2, h3 {
 		color: $headerRed;
 	}
+
+	.highlight {
+		background-color: transparent;
+		padding: 5px;
+	}
+
+	.boxLink {
+		display: inline-block;
+		background-color: $btnRed;
+		padding: 8px;
+		min-width: 100px;
+		color: white;
+		text-decoration: none;
+		text-align: center;
+	}
+}
+
+img[src~="content-small"] {
+	width: 10em;
+}
+
+img[src~="content-medium"] {
+	width: 14em;
+}
+
+img[src~="content-full-span"] {
+	width: 100%;
 }
 
 #c-content {
 	@extend %main-div;
 }
 
+pre {
+	white-space: pre-wrap;		/* Since CSS 2.1 */
+	white-space: -moz-pre-wrap;	/* Mozilla, since 1999 */
+	white-space: -pre-wrap;		/* Opera 4-6 */
+	white-space: -o-pre-wrap;	/* Opera 7 */
+	word-wrap: break-word;		/* Internet Explorer 5.5+ */
+}
+
 #section {
 	text-align: left;
 
-	div {
-		width: 100%;
+	.sectDiv {
+		width: 60%;
 		margin-left: -20.5%;
-		padding-left: 20.5%;
+		padding-left: 42.5%;
 		padding-right: 40%;
-		padding-top: 1%;
-		padding-bottom: 1%;
+		padding-top: 4em;
+		padding-bottom: 4em;
+	}
+
+	.oddSect {
+		background-color: $backGrey; 
+	}
+
+	.firstSect {
+		padding-top: 0;
 	}
 }

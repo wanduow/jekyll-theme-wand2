@@ -88,7 +88,7 @@
 	#people {
 		@extend %main-mob;
 
-		.pCatagory {
+		.pCategory {
 			margin-left: -25%;
 			padding-left: 45%;
 		}
@@ -169,5 +169,25 @@
 
 	footer p {
 		font-size: 0.9em;
+	}
+
+	#section {
+	
+		.sectDiv {
+			width: 100%;
+			margin-left: -20.5%;
+			padding-left: 22.5%;
+			padding-right: 40%;
+			padding-top: 4em;
+			padding-bottom: 4em;
+		}
+	
+		.oddSect {
+			background-color: $backGrey; 
+		}
+	
+		.firstSect {
+			padding-top: 0;
+		}
 	}
 }

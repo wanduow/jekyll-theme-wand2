@@ -85,4 +85,8 @@
 #project {
 	@extend %main-div;
 	text-align: initial;
+
+	.projectBack {
+		margin-top: 1em;
+	}
 }

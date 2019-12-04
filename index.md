@@ -1,9 +1,10 @@
 ---
-layout: default
-title: WAND
+layout: plain
+title: Documentation
 ---
-Wand Theme
+
+WAND theme
 ==========
 - - -
 
-This is the theme for the wand website
+This is the theme used for the WAND site

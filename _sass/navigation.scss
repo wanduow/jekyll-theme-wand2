@@ -9,6 +9,7 @@ nav {
 	h6 {
 		margin-top: 1em;
 		margin-bottom: 1em;
+		color: white;
 	}
 
 	a {
@@ -83,6 +84,7 @@ nav {
 			background-color: $btnRed;
 			width: 90%;
 			text-align: left;
+			color: white;
 	
 			&:hover {font-weight: bold;} /* Change color of dropdown links on hover */
 		}

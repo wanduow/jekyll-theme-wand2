@@ -94,7 +94,7 @@ a {
 
 #contentContainer {
 	min-height: 100vh;
-	padding: 1% 5% 5% 5%;
+	padding: 1% 5% 0% 5%;
 	font-family: $siteFont;
 	text-align: center;
 
@@ -124,6 +124,10 @@ img[src~="content-small"] {
 
 img[src~="content-medium"] {
 	width: 14em;
+}
+
+img[src~="content-third-span"] {
+	width: 32%;
 }
 
 img[src~="content-full-span"] {

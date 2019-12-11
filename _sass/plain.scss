@@ -38,3 +38,24 @@
 		color: $headerRed;
 	}
 }
+
+#section {
+	text-align: left;
+
+	.sectDiv {
+		width: 60%;
+		margin-left: -20.5%;
+		padding-left: 42.5%;
+		padding-right: 40%;
+		padding-top: 4em;
+		padding-bottom: 4em;
+	}
+
+	.oddSect {
+		background-color: $backGrey; 
+	}
+
+	.firstSect {
+		padding-top: 0;
+	}
+}

@@ -49,7 +49,7 @@
 		display: block;
 		height: 60px;
 		width: 20%;
-		margin-right: 19%;
+		margin-right: 22%;
 
 		img {
 			width: 1em;
@@ -141,8 +141,8 @@
 	}
 
 	#maps-content {
-		padding-right: 0px;
 		@extend %main-mob;
+		padding-right: 0px;
 	}
 
 	#maps-panel {

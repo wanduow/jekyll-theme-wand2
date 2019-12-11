@@ -1,7 +1,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1"> <!--For mobile-->
-	<title>{{ page.title }}</title>
+	<title>{% if page.layout == "person" and page.tab == null %}{{ page.name }}{% else %}{{ page.title }}{% endif %}</title>
 	<link rel="shortcut icon" type="image/x-icon" href="{{ 'favicon.ico' | absolute_url }}" >
 	<link rel ="stylesheet" href="{{ 'assets/css/styles.css' | absolute_url }}">
 	<link rel ="stylesheet" href="{{ 'assets/css/local.css' | absolute_url }}">

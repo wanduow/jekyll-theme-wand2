@@ -2,12 +2,16 @@
 <html lang="en">
 	{% include headwLocal.html %}
 	<body>
+		<div id="container">
 		{% include banner.html %}
 		{% include navigation.html %}
-		<script>clean(document.getElementById('navigation'));</script>
+		<script>
+			clean(document.getElementById('navigation'));
+		</script>
 		<div id="contentContainer">
 			{{ content }}
 		</div>
 		{% include footer.html %}
+		</div>
 	</body>
 </html>

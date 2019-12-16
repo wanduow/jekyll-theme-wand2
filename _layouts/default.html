@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	{% include headwLocal.html %}
-	<body>
+	<body id="body">
 		<div id="container">
 		{% include banner.html %}
 		{% include navigation.html %}
@@ -13,5 +13,8 @@
 		</div>
 		{% include footer.html %}
 		</div>
+		<script>
+			checkScrollBars();
+		</script>
 	</body>
 </html>

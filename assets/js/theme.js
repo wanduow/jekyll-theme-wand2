@@ -74,6 +74,5 @@ function getScrollBarWidth () {
 }
 
 window.addEventListener('resize', function(event){
-  console.log('Testing 123');
   checkScrollBars();
 });

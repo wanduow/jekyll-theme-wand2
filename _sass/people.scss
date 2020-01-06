@@ -18,7 +18,17 @@
 			width: 200px;
 			margin-right: 70px;
 			outline: none;
-	
+
+			h4 {
+				transition: color 0.3s;
+			}
+			
+			&:hover {
+				> h4 {
+					color: $btnRed;
+				}
+			}
+
 			&:active {
 				outline: none;
 			}

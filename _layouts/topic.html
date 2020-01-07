@@ -5,31 +5,27 @@ layout: default
 <div id="topic">
 	<h2>{{ page.name }}</h2>
 	{{ content }}
-
-	<h3>Projects</h3>
 	<table>
 		<tr id="tableHead">
 			<td>Name</td>
 			<td>Description</td>
-			<td>Link</td>
 		</tr>
-		<tr id="thSpacer"><td></td><td></td><td></td></tr>
-		{% for externalProject in site.data.externalProject %}
-			{% if page.name == externalProject.topic %}
+		<tr id="thSpacer"><td></td><td></td></tr>
+		{% for internalProject in site.projects %}
+			{% if page.name == internalProject.topic %}
 			<tr>
-				<td>{{ externalProject.name }}</td>
-				<td>{{ externalProject.description }}</td>
-				<td class="linkCell"><a href="{{ externalProject.link }}" class="boxLink">Link</a></td>
+				<td><a href="{{ internalProject.url | absolute_url }}">
+					{{ internalProject.name }}</a></td>
+				<td>{{ internalProject.description }}</td>
 			</tr>
 			{% endif %}
 		{% endfor %}
 
-		{% for internalProject in site.projects %}
-			{% if page.name == internalProject.topic %}
+		{% for externalProject in site.data.externalProject %}
+			{% if page.name == externalProject.topic %}
 			<tr>
-				<td>{{ internalProject.name }}</td>
-				<td>{{ internalProject.description }}</td>
-				<td class="linkCell"><a href="{{ internalProject.url | absolute_url }}" class="boxLink">Link</a></td>
+				<td><a href="{{ externalProject.link }}">{{ externalProject.name }}</a></td>
+				<td>{{ externalProject.description }}</td>
 			</tr>
 			{% endif %}
 		{% endfor %}

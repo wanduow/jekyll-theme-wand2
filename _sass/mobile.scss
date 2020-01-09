@@ -20,7 +20,7 @@
 		display: block;
 		position: $navPos;
 		transform: translate(0%, -100%);
-		transition: transform 0.45s ease-in;
+		transition: all 0.45s ease-in;
 
 		#navImg {
 			display: none;

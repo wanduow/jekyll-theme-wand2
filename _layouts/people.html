@@ -6,14 +6,14 @@ layout: default
 </div>
 
 <div id="people">
-	{% for item in site.data.pCategory %}
-	{% assign indexOdd = forloop.index0 | modulo: 2 %}
-	<div class="pCategory {% if indexOdd == 1 %} oddpCategory{% endif %}">
+	{%- for item in site.data.pCategory -%}
+	{%- assign indexOdd = forloop.index0 | modulo: 2 -%}
+	<div class="pCategory {% if indexOdd == 1 %}oddpCategory{% endif %}">
 		<h1>{{ item.name }}</h1>
 		
 		<ul>
-			{% for person in site.people %}
-			{% if person.role == item.name%}
+			{%- for person in site.people -%}
+			{%- if person.role == item.name -%}
 			<li class="person">
 				<a href="{% if person.link != null %}{{ person.link }}{% else %}{{ person.url | absolute_url }}{% endif %}">
 					<img src="
@@ -31,9 +31,9 @@ layout: default
 				<h4>{{ person.name }}</h4>
 				</a>
 			</li>
-			{% endif %}
-			{% endfor %}
+			{%- endif -%}
+			{%- endfor -%}
 		</ul>
 	</div> <br >
-	{% endfor %}
+	{%- endfor -%}
 </div>

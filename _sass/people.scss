@@ -22,7 +22,7 @@
 			h4 {
 				transition: color 0.3s;
 			}
-			
+
 			&:hover {
 				> h4 {
 					color: $btnRed;
@@ -38,20 +38,20 @@
 			text-align: left;
 			display: inline-block;
 			vertical-align: top;
-	
+
 			h4 {
 				margin: 0px;
 				padding: 0px;
 				padding-top: 15px;
 			}
-	
+
 			p {
 				margin: 0px;
 			}
 		}
 	}
 	.oddpCategory {
-		background-color: $backGrey; 
+		background-color: $backGrey;
 	}
 
 	.pCategory {
@@ -74,7 +74,7 @@
 }
 
 .peopleImg {
-	background-color: #A0A0A0;
+	background-color: #a0a0a0;
 	height: 200px;
 	width: 200px;
 	display: block;
@@ -96,7 +96,7 @@
 	h2 {
 		margin-bottom: 0.2em;
 	}
-	
+
 	h4 {
 		color: $headerRed;
 	}

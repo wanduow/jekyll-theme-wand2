@@ -89,6 +89,10 @@
 		@extend %main-mob;
 
 		.pCategory {
+			h1 {
+				width: 200px;
+			}
+
 			margin-left: -25%;
 			padding-left: 45%;
 		}

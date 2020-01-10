@@ -25,7 +25,7 @@ nav {
 
 	a:hover {
 		background-color: $btnRed;
-		text-decoration: none; 
+		text-decoration: none;
 	}
 
 	img {
@@ -51,7 +51,7 @@ nav {
 	.current {
 		background-color: $btnRed;
 
-		&:hover{
+		&:hover {
 			background-color: $navBlack;
 		}
 	}
@@ -60,7 +60,9 @@ nav {
 /* Dropdown Button */
 .droplink {
 	/* Change the background color of the dropdown button when the dropdown content is shown */
-	&:hover .droplink {background-color: $btnRed;}
+	&:hover .droplink {
+		background-color: $btnRed;
+	}
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -69,14 +71,16 @@ nav {
 	position: relative;
 	font-family: $siteFont;
 
-	&-content {			/* Dropdown Content (Hidden by Default) */
+	&-content {
+		/* Dropdown Content (Hidden by Default) */
 		display: none;
 		position: absolute;
 		width: 103.1%;
 		z-index: 1;
 		left: 0;
 
-		a {		/* Links inside the dropdown */
+		a {
+			/* Links inside the dropdown */
 			padding: 6% 1% 4% 6%;
 			text-decoration: none;
 			display: block;
@@ -84,14 +88,20 @@ nav {
 			width: 90%;
 			text-align: left;
 			color: white;
-	
-			&:hover {font-weight: bold;} /* Change color of dropdown links on hover */
+
+			&:hover {
+				font-weight: bold;
+			} /* Change color of dropdown links on hover */
 		}
 	}
 
-	&:hover{
-		.dropdown-content {display: block;}		/* Show the dropdown menu on hover */
-		.droplink {background-color: $btnRed;}	/* Keep research button red */
+	&:hover {
+		.dropdown-content {
+			display: block;
+		} /* Show the dropdown menu on hover */
+		.droplink {
+			background-color: $btnRed;
+		} /* Keep research button red */
 	}
 }
 

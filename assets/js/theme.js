@@ -73,6 +73,20 @@ function getScrollBarWidth () {
   return (w1 - w2);
 }
 
+var currResize;
+
 window.addEventListener('resize', function(event){
   checkScrollBars();
+  
+  clearTimeout(currResize);
+  currResize = setTimeout(noResize, 500);
+
+  var navNode = document.getElementById("navigation");
+  navNode.style.transitionDuration = "0s";
+
 });
+
+function noResize(){
+  var navNode = document.getElementById("navigation");
+  navNode.style.transitionDuration = "0.45s";
+}

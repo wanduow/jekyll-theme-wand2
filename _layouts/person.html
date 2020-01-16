@@ -27,20 +27,16 @@ layout: default
 	<table>
 		<tr id="tableHead">
 			<td>Name</td>
-			<td>Topic</td>
 			<td>Description</td>
-			<td>Link</td>
 		</tr>
-		<tr id="thSpacer"><td></td><td></td><td></td><td></td></tr>
+		<tr id="thSpacer"><td></td><td></td></tr>
 		{% for project in projectsArray %}
 		{% assign projectCompare = project | strip %}
 		{% for externalProject in site.data.externalProject %}
 			{% if projectCompare == externalProject.name %}
 			<tr>
-				<td>{{ externalProject.name }}</td>
-				<td>{{ externalProject.topic }}</td>
+				<td><a href="{{ externalProject.link }}">{{ externalProject.name }}</a></td>
 				<td>{{ externalProject.description }}</td>
-				<td class="linkCell"><a href="{{ externalProject.link }}" class="boxLink">Link</a></td>
 			</tr>
 			{% endif %}
 		{% endfor %}
@@ -48,10 +44,8 @@ layout: default
 		{% for internalProject in site.projects %}
 			{% if projectCompare == internalProject.name %}
 			<tr>
-				<td>{{ internalProject.name }}</td>
-				<td>{{ internalProject.topic }}</td>
+				<td><a href="{{ internalProject.url | absolute_url }}">{{ internalProject.name }}</a></td>
 				<td>{{ internalProject.description }}</td>
-				<td class="linkCell"><a href="{{ internalProject.url | absolute_url }}" class="boxLink">Link</a></td>
 			</tr>
 			{% endif %}
 		{% endfor %}

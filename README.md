@@ -47,7 +47,6 @@ gem "jekyll"
 # gem "jekyll-theme-wand2 ", path: "../jekyll-theme-wand2"
 group :jekyll_plugins do
   gem "github-pages"
-#   gem "jekyll-feed", "~> 0.12"
 end
 ```
 
@@ -55,7 +54,7 @@ And in your sites `_config.yml` provide the following values, and comment out th
 
 ```yml
 title: WAND
-email: danielbesley0@gmail.com
+email: 
 description: >- # this means to ignore newlines until "baseurl:"
  Write an awesome description for your new site here. You can edit this
  line in _config.yml. It will appear in your document head meta (for

@@ -16,7 +16,7 @@ layout: default
 			<tr>
 				<td><a href="{{ internalProject.url | absolute_url }}">
 					{{ internalProject.name }}</a></td>
-				<td>{{ internalProject.description }}</td>
+				<td>{{ internalProject.description | markdownify }}</td>
 			</tr>
 			{% endif %}
 		{% endfor %}
@@ -25,7 +25,7 @@ layout: default
 			{% if page.name == externalProject.topic %}
 			<tr>
 				<td><a href="{{ externalProject.link }}">{{ externalProject.name }}</a></td>
-				<td>{{ externalProject.description }}</td>
+				<td>{{ externalProject.description | markdownify }}</td>
 			</tr>
 			{% endif %}
 		{% endfor %}

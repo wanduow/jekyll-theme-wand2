@@ -47,6 +47,7 @@ gem "jekyll"
 # gem "jekyll-theme-wand2 ", path: "../jekyll-theme-wand2"
 group :jekyll_plugins do
   gem "github-pages"
+  gem "jekyll-sitemap"
 end
 ```
 
@@ -72,7 +73,7 @@ remote_theme: wanduow/jekyll-theme-wand2
 ### Use a layout from theme refer to it in metadata under "layout tag"
 ```md
 ---
-layout: PREMADE-LAYOUT-NAME`
+layout: PREMADE-LAYOUT-NAME
 ---
 ```
 

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div id="topic">
+	<h2>{{ page.setname }}</h2>
+	{{ content }}
+	<table>
+		<tr id="tableHead">
+			<td>Name</td>
+			<td>Description</td>
+		</tr>
+		<tr id="thSpacer"><td></td><td></td></tr>
+		{% for data in site.witsdata %}
+			{% if page.setname == data.setname %}
+			<tr>
+				<td><a href="{{ data.url | absolute_url }}">
+					{{ data.tracename }}</a></td>
+				<td>{{ data.start }}</td>
+			</tr>
+			{% endif %}
+		{% endfor %}
+	</table>
+</div>

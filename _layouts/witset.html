@@ -4,7 +4,76 @@ layout: default
 
 <div id="topic">
 	<h2>{{ page.setname }}</h2>
-	{{ content }}
+	<div id="topic-nospace">
+		<table>
+			<tr>
+				<td><b>Trace Format</b></td>
+				<td>{{ page.format }}</td>
+			</tr>
+			<tr>
+				<td><b>Volume on Disk</b></td>
+				<td>{{ page.size }}</td>
+			</tr>
+			<tr>
+				<td><b>Number of traces</b></td>
+				<td>{{ page.counts }}</td>
+			</tr>
+			<tr>
+				<td><b>Capture Start (Local)</b></td>
+				<td>{{ page.start }}</td>
+			</tr>
+			<tr>
+				<td><b>Capture End (Local)</b></td>
+				<td>{{ page.end }}</td>
+			</tr>
+			<tr>
+				<td><b>Total Duration</b></td>
+				<td>{{ page.duration }}</td>
+			</tr>
+			<tr>
+				<td><b>Packets Captured</b></td>
+				<td>{{ page.pkts }}</td>
+			</tr>
+			<tr>
+				<td><b>Total Traffic</b></td>
+				<td>{{ page.traf_bytes }}</td>
+			</tr>
+			<tr>
+				<td><b>Contiguity</b></td>
+				<td>{{ page.cont }}</td>
+			</tr>
+			{%- if page.snap != null -%}
+				<tr>
+					<td><b>Snapping Method</b></td>
+					<td>{{ page.snap }}</td>
+				</tr>
+			{%- endif -%}
+			<tr>
+				<td><b>Rotation Policy</b></td>
+				<td>{{ page.rot }}</td>
+			</tr>
+			{%- if page.anon != null -%}
+				<tr>
+					<td><b>Anonymization</b></td>
+					<td>{{ page.anon }}</td>
+				</tr>
+			{%- endif -%}
+			{%- if page.download != null -%}
+				<tr>
+					<td><b>Download</b></td>
+					<td><a href="{{ page.download }}">Link</a></td>
+				</tr>
+			{%- endif -%}
+			{%- if page.ripedownload != null -%}
+				<tr>
+					<td><b>Download</b></td>
+					<td><a href="{{ page.ripedownload }}">Link (RIPE repository)</a></td>
+				</tr>
+			{%- endif -%}
+		</table>
+	</div>
+
+	<p>{{ content }}</p>
 	<table>
 		<tr id="tableHead">
 			<td>Name</td>

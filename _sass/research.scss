@@ -49,6 +49,12 @@
 	@extend %main-div;
 	text-align: initial;
 
+	#topic-nospace {
+		tr {
+			border-bottom: 0;
+		}
+	}
+
 	td {
 		padding: 10px;
 	}

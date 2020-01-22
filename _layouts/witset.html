@@ -96,6 +96,21 @@ layout: default
 						{%- assign tmins = chours | divided_by: 60 | floor -%}
 						{%- assign cmins = chours | modulo: 60 -%}
 						{%- assign tsec = cmins | floor -%}
+
+						{%- assign lhours = thours | prepend: "" | size -%}
+						{%- for i in (lhours..1) -%}
+							{%- assign thours = thours | prepend: 0 -%}
+						{%- endfor -%}
+
+						{%- assign lmins = tmins | prepend: "" | size -%}
+						{%- for i in (lmins..1) -%}
+							{%- assign tmins = tmins | prepend: 0 -%}
+						{%- endfor -%}
+
+						{%- assign lsec = tsec | prepend: "" | size -%}
+						{%- for i in (lsec..1) -%}
+							{%- assign tsec = tsec | prepend: 0 -%}
+						{%- endfor -%}
 						{{- thours -}}:{{- tmins -}}:{{- tsec -}}
 					</td>
 					<td>{{ data.pkts }}</td>

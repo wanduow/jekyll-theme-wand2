@@ -3,10 +3,55 @@ layout: default
 ---
 
 <div id="topic">
-	<h2>{{ page.tracename }}</h2>
-	<ul>
-		<li>{{ page.gzsize }}</li>
-		<li>{{ page.len }}</li>
-		<li>{{ page.start }}</li>
-	</ul>
+	<h2>{{ page.setname }}/{{ page.tracename }}</h2>
+	<div id="topic-nospace">
+		<table>
+			<tr>
+				<td><b>Start Time (Local)</b></td>
+				<td>{{ page.start }}</td>
+			</tr>
+			<tr>
+				<td><b>End Time (Local)</b></td>
+				<td>{{ page.end }}</td>
+			</tr>
+			<tr>
+				<td><b>Duration</b></td>
+				<td>{{ page.len }}</td>
+			</tr>
+			<tr>
+				<td><b>Compressed Size</b></td>
+				<td>{{ page.gzsize }}</td>
+			</tr>
+			<tr>
+				<td><b>Uncompressed Size</b></td>
+				<td>{{ page.size }}</td>
+			</tr>
+			<tr>
+				<td><b>Packets</b></td>
+				<td>{{ page.pkts }}</td>
+			</tr>
+			<tr>
+				<td><b>Total Traffic</b></td>
+				<td>{{ page.totalwirelen }}</td>
+			</tr>
+			{%- if page.md5 != null -%}
+				<tr>
+					<td><b>MD5 Checksum</b></td>
+					<td>{{ page.md5 }}</td>
+				</tr>
+			{%- endif -%}
+			{%- if page.download != null -%}
+				<tr>
+					<td><b>Download</b></td>
+					<td><a href="{{ page.download }}">Link</a></td>
+				</tr>
+			{%- endif -%}
+			{%- if page.ripedownload != null -%}
+				<tr>
+					<td><b>Download</b></td>
+					<td><a href="{{ page.ripedownload }}">Link (RIPE repository)</a></td>
+				</tr>
+			{%- endif -%}
+		</table>
+	</div>
 </div>

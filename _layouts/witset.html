@@ -77,7 +77,10 @@ layout: default
 	<table>
 		<tr id="tableHead">
 			<td>Name</td>
-			<td>Description</td>
+			<td>Local Start Time</td>
+			<td>Duration</td>
+			<td>Total Packets</td>
+			<td>Compressed Size</td>
 		</tr>
 		<tr id="thSpacer"><td></td><td></td></tr>
 		{% for data in site.wits %}
@@ -87,6 +90,16 @@ layout: default
 					<td><a href="{{ data.url | absolute_url }}">
 						{{ data.tracename }}</a></td>
 					<td>{{ data.start }}</td>
+					<td>
+						{%- assign thours = data.len | divided_by: 3600 | floor -%}
+						{%- assign chours = data.len | modulo: 3600 -%}
+						{%- assign tmins = chours | divided_by: 60 | floor -%}
+						{%- assign cmins = chours | modulo: 60 -%}
+						{%- assign tsec = cmins | floor -%}
+						{{- thours -}}:{{- tmins -}}:{{- tsec -}}
+					</td>
+					<td>{{ data.pkts }}</td>
+					<td>{{ data.gzsize }}</td>
 				</tr>
 				{% endif %}
 			{% endif %}

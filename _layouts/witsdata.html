@@ -4,6 +4,19 @@ layout: default
 
 <div id="topic">
 	<h2>{{ page.setname }}/{{ page.tracename }}</h2>
+
+	<span style="width: 31px; display: inline-block">
+	{% if page.previous.url and page.previous.layout != "witset" %}
+		<a href="{{page.previous.url}}">Prev</a>
+	{% endif %}
+	</span>
+	<a href="./traceset.html">Up</a>
+	{% if page.next.url and page.next.layout != "witset" %}
+		<a href="{{page.next.url}}">Next</a>
+	{% endif %}
+
+
+
 	<div id="topic-nospace">
 		<table>
 			<tr>
@@ -16,7 +29,28 @@ layout: default
 			</tr>
 			<tr>
 				<td><b>Duration</b></td>
-				<td>{{ page.len }}</td>
+				<td>{%- assign thours = page.len | divided_by: 3600 | floor -%}
+					{%- assign chours = page.len | modulo: 3600 -%}
+					{%- assign tmins = chours | divided_by: 60 | floor -%}
+					{%- assign cmins = chours | modulo: 60 -%}
+					{%- assign tsec = cmins | floor -%}
+	
+					{%- assign lhours = thours | prepend: "" | size -%}
+					{%- for i in (lhours..1) -%}
+						{%- assign thours = thours | prepend: 0 -%}
+					{%- endfor -%}
+	
+					{%- assign lmins = tmins | prepend: "" | size -%}
+					{%- for i in (lmins..1) -%}
+						{%- assign tmins = tmins | prepend: 0 -%}
+					{%- endfor -%}
+	
+					{%- assign lsec = tsec | prepend: "" | size -%}
+					{%- for i in (lsec..1) -%}
+						{%- assign tsec = tsec | prepend: 0 -%}
+					{%- endfor -%}
+					{{- thours -}}:{{- tmins -}}:{{- tsec -}}
+				</td>
 			</tr>
 			<tr>
 				<td><b>Compressed Size</b></td>
@@ -53,5 +87,12 @@ layout: default
 				</tr>
 			{%- endif -%}
 		</table>
+
+		
+		{% for imgRef in site.static_files %}
+			{% if imgRef.path contains page.tracename %}
+			<img src="{{imgRef.path | absolute_url }}# content-half-span" >
+			{% endif %}
+		{% endfor %}
 	</div>
 </div>

@@ -158,6 +158,11 @@ img[src~="content-third-span"] {
 	width: 32%;
 }
 
+img[src~="content-half-span"] {
+	width: 49%;
+	display: inline-block;
+}
+
 img[src~="content-full-span"] {
 	width: 100%;
 }

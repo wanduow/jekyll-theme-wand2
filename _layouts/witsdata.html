@@ -7,12 +7,12 @@ layout: default
 
 	<span style="width: 31px; display: inline-block">
 	{% if page.previous.url and page.previous.layout != "witset" %}
-		<a href="{{page.previous.url}}">Prev</a>
+		<a href="{{page.previous.url | absolute_url }}">Prev</a>
 	{% endif %}
 	</span>
 	<a href="./traceset.html">Up</a>
 	{% if page.next.url and page.next.layout != "witset" %}
-		<a href="{{page.next.url}}">Next</a>
+		<a href="{{page.next.url | absolute_url }}">Next</a>
 	{% endif %}
 
 
@@ -87,12 +87,29 @@ layout: default
 				</tr>
 			{%- endif -%}
 		</table>
-
-		
-		{% for imgRef in site.static_files %}
-			{% if imgRef.path contains page.tracename %}
-			<img src="{{imgRef.path | absolute_url }}# content-half-span" >
-			{% endif %}
-		{% endfor %}
+		<img src="
+		{%- assign imgProc = page.path | split: '' | reverse | join: '' -%}
+		{%- assign imgProc = imgProc | replace_first: 'dm.', 'gnp.stkp-' -%}
+		{%- assign imgRef = imgProc | split: '' | reverse | join: '' | replace_first: '_wits', 'assets/images/wits' | split: '/' -%}
+		{%- capture imgFin -%}
+		{%- for imgPath in imgRef -%}
+			{{imgPath}}{%- if forloop.last == false -%}/{%- endif -%}
+			{%- if forloop.index0 == 4 -%}graphs/{%- endif -%}
+		{%- endfor -%}
+		{%- endcapture -%}
+		{{ imgFin | absolute_url}}# content-half-span
+		">
+		<img src="
+		{%- assign imgProc = page.path | split: '' | reverse | join: '' -%}
+		{%- assign imgProc = imgProc | replace_first: 'dm.', 'gnp.setyb-' -%}
+		{%- assign imgRef = imgProc | split: '' | reverse | join: '' | replace_first: '_wits', 'assets/images/wits' | split: '/' -%}
+		{%- capture imgFin -%}
+		{%- for imgPath in imgRef -%}
+			{{imgPath}}{%- if forloop.last == false -%}/{%- endif -%}
+			{%- if forloop.index0 == 4 -%}graphs/{%- endif -%}
+		{%- endfor -%}
+		{%- endcapture -%}
+		{{ imgFin | absolute_url}}# content-half-span
+		">
 	</div>
 </div>

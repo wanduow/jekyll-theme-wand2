@@ -94,7 +94,7 @@ layout: default
 		{%- capture imgFin -%}
 		{%- for imgPath in imgRef -%}
 			{{imgPath}}{%- if forloop.last == false -%}/{%- endif -%}
-			{%- if forloop.index0 == 4 -%}graphs/{%- endif -%}
+			{%- if forloop.rindex0 == 1 -%}graphs/{%- endif -%}
 		{%- endfor -%}
 		{%- endcapture -%}
 		{{ imgFin | absolute_url}}# content-half-span
@@ -106,7 +106,7 @@ layout: default
 		{%- capture imgFin -%}
 		{%- for imgPath in imgRef -%}
 			{{imgPath}}{%- if forloop.last == false -%}/{%- endif -%}
-			{%- if forloop.index0 == 4 -%}graphs/{%- endif -%}
+			{%- if forloop.rindex0 == 1 -%}graphs/{%- endif -%}
 		{%- endfor -%}
 		{%- endcapture -%}
 		{{ imgFin | absolute_url}}# content-half-span

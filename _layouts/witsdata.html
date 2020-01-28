@@ -6,14 +6,16 @@ layout: default
 	<h2>{{ page.setname }}/{{ page.tracename }}</h2>
 
 	<span style="width: 31px; display: inline-block">
-	{% if page.previous.url and page.previous.layout != "witset" %}
+	{%- if page.previous.url and page.previous.layout != "witset" -%}
 		<a href="{{page.previous.url | absolute_url }}">Prev</a>
-	{% endif %}
+	{%- endif -%}
 	</span>
-	<a href="./traceset.html">Up</a>
-	{% if page.next.url and page.next.layout != "witset" %}
+	<span style="width: 25px; display: inline-block">
+		<a href="./traceset.html">Up</a>
+	</span>
+	{%- if page.next.url and page.next.layout != "witset" -%}
 		<a href="{{page.next.url | absolute_url }}">Next</a>
-	{% endif %}
+	{%- endif -%}
 
 
 
@@ -77,13 +79,13 @@ layout: default
 			{%- if page.download != null -%}
 				<tr>
 					<td><b>Download</b></td>
-					<td><a href="{{ page.download }}">Link</a></td>
+					<td><a href="{{ page.download }}" download>Link</a></td>
 				</tr>
 			{%- endif -%}
 			{%- if page.ripedownload != null -%}
 				<tr>
 					<td><b>Download</b></td>
-					<td><a href="{{ page.ripedownload }}">Link (RIPE repository)</a></td>
+					<td><a href="{{ page.ripedownload }}" download>Link (RIPE repository)</a></td>
 				</tr>
 			{%- endif -%}
 		</table>

@@ -62,13 +62,13 @@ layout: default
 			{%- if page.download != null -%}
 				<tr>
 					<td><b>Download</b></td>
-					<td><a href="{{ page.download }}">Link</a></td>
+					<td><a href="{{ page.download }}" download>Link</a></td>
 				</tr>
 			{%- endif -%}
 			{%- if page.ripedownload != null -%}
 				<tr>
 					<td><b>Download</b></td>
-					<td><a href="{{ page.ripedownload }}">Link (RIPE repository)</a></td>
+					<td><a href="{{ page.ripedownload }}" download>Link (RIPE repository)</a></td>
 				</tr>
 			{%- endif -%}
 		</table>
@@ -84,9 +84,9 @@ layout: default
 			<td>Compressed Size</td>
 		</tr>
 		<tr id="thSpacer"><td></td><td></td></tr>
-		{% for data in site.wits %}
-			{% if page.setname == data.setname %}
-				{% if data.layout == "witsdata" %}
+		{%- for data in site.wits -%}
+			{%- if page.setname == data.setname -%}
+				{%- if data.layout == "witsdata" -%}
 				<tr>
 					<td><a href="{{ data.url | absolute_url }}">
 						{{ data.tracename }}</a></td>
@@ -117,8 +117,8 @@ layout: default
 					<td>{{ data.pkts }}</td>
 					<td>{{ data.gzsize }}</td>
 				</tr>
-				{% endif %}
-			{% endif %}
-		{% endfor %}
+				{%- endif -%}
+			{%- endif -%}
+		{%- endfor -%}
 	</table>
 </div>

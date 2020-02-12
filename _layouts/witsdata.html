@@ -89,7 +89,7 @@ layout: default
 				</tr>
 			{%- endif -%}
 		</table>
-		<img src="
+
 		{%- assign imgProc = page.path | split: '' | reverse | join: '' -%}
 		{%- assign imgProc = imgProc | replace_first: 'dm.', 'gnp.stkp-' -%}
 		{%- assign imgRef = imgProc | split: '' | reverse | join: '' | replace_first: '_wits', 'assets/images/wits' | split: '/' -%}
@@ -99,9 +99,8 @@ layout: default
 			{%- if forloop.rindex0 == 1 -%}graphs/{%- endif -%}
 		{%- endfor -%}
 		{%- endcapture -%}
-		{{ imgFin | absolute_url}}# content-half-span
-		">
-		<img src="
+		<a href="{{ imgFin | absolute_url}}"><img src="{{ imgFin | absolute_url}}# content-half-span"></a>
+		
 		{%- assign imgProc = page.path | split: '' | reverse | join: '' -%}
 		{%- assign imgProc = imgProc | replace_first: 'dm.', 'gnp.setyb-' -%}
 		{%- assign imgRef = imgProc | split: '' | reverse | join: '' | replace_first: '_wits', 'assets/images/wits' | split: '/' -%}
@@ -111,7 +110,6 @@ layout: default
 			{%- if forloop.rindex0 == 1 -%}graphs/{%- endif -%}
 		{%- endfor -%}
 		{%- endcapture -%}
-		{{ imgFin | absolute_url}}# content-half-span
-		">
+		<a href="{{ imgFin | absolute_url}}"><img src="{{ imgFin | absolute_url}}# content-half-span"></a>
 	</div>
 </div>
